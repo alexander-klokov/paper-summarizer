@@ -35,4 +35,6 @@ def summarize_pdf(path_to_pdf):
     # run the chain
     summary = summary_chain.run(docs)
 
+    print(summary)
+
     return summary
