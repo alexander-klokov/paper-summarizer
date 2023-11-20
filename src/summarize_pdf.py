@@ -14,7 +14,7 @@ openai_api_key=os.getenv("OPENAI_API_KEY")
 # extract text from pdf
 def extract_text_from_pdf(path_to_pdf):
     loader = PyPDFLoader(path_to_pdf)
-    docs = loader.load_and_split()[0:11]
+    docs = loader.load_and_split()
     return docs
 
 # summarize pdf
@@ -34,7 +34,5 @@ def summarize_pdf(path_to_pdf):
 
     # run the chain
     summary = summary_chain.run(docs)
-
-    print(summary)
 
     return summary
